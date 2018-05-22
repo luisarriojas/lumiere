@@ -1,0 +1,39 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="slideError" ng-show="galleries.result=='serverError'">
+        <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+    </div>
+
+    <a class="galleryCreateAction" href="#!impresiones/create"><i class="fa fa-plus"></i> Crear Galería</a>
+
+    <div class="table">
+        <!--header-->
+        <div class="tableHeader">
+            <div class="id">ID</div>
+            <div class="title">Título</div>
+            <div class="folder">Carpeta</div>
+            <div class="status">Status</div>
+
+            <div class="break"></div>
+        </div>
+        <!--galleries-->
+        <a href="#!impresiones/read/{{record.id}}"  ng-repeat="record in galleries.records">
+            <div class="tableData">
+                <div class="id"><i class="fa fa-pencil"></i> {{record.id}}</div>
+                <div class="title">{{record.title}}</div>
+                <div class="folder">{{record.folder}}</div>
+                <div class="status">{{record.status}}</div>
+
+                <div class="break"></div>
+            </div>
+        </a>
+    </div>
+</div>

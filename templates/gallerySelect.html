@@ -1,0 +1,68 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="galleryTitle" ng-bind="title"></div>
+
+    <div class="galleryControls">
+        <a class="galleryButton" href="javascript:void(0);" ng-click="first();"><i class="fa fa-fast-backward"></i></a>
+        <a class="galleryButton" href="javascript:void(0);" ng-click="previous();"><i class="fa fa-step-backward"></i></a>
+
+        <h2 class="galleryPage">Página {{pagination.page + 1}} de {{pagination.qPage}}</h2>
+
+        <a class="galleryButton" href="javascript:void(0);" ng-click="next();"><i class="fa fa-step-forward"></i></a>
+        <a class="galleryButton" href="javascript:void(0);" ng-click="last();"><i class="fa fa-fast-forward"></i></a>
+
+        <div class="break"></div>
+
+    </div>
+
+    <div class="galleryResult">
+        <div class="result success" ng-show="result=='success'">
+            <i class="fa fa-check-square-o"></i> Sus selecciones han sido grabadas. Gracias.
+        </div>
+
+        <div class="result error" ng-show="result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> Hubo un problema al enviar sus selecciones. Vuelva a intentar.
+        </div>
+
+        <a href="javascript:void(0);" ng-click="savePhotos();"><i class="fa fa-floppy-o"></i> Grabar selecciones</a>
+    </div>
+
+    <div class="galleryPhotoContainer" ng-repeat="photo in photos | startFrom:pagination.page * pagination.pageSize | limitTo:pagination.pageSize">
+        <div class="checkbox">
+            <input type="checkbox" ng-model="photo.status"> Imprimir
+        </div>
+
+        <a href="javascript:void(0);" ng-click="showPhoto($index);">
+            <div class="galleryPhoto" style="background-image:url(galleries/impresiones/{{folder}}/{{photo.file}})"></div>
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="galleryControls">
+        <a class="galleryButton" href="javascript:void(0);" ng-click="first();"><i class="fa fa-fast-backward"></i></a>
+        <a class="galleryButton" href="javascript:void(0);" ng-click="previous();"><i class="fa fa-step-backward"></i></a>
+
+        <h2 class="galleryPage">Página {{pagination.page + 1}} de {{pagination.qPage}}</h2>
+
+        <a class="galleryButton" href="javascript:void(0);" ng-click="next();"><i class="fa fa-step-forward"></i></a>
+        <a class="galleryButton" href="javascript:void(0);" ng-click="last();"><i class="fa fa-fast-forward"></i></a>
+
+        <div class="break"></div>
+
+    </div>
+</div>
+
+<div class="galleryFullscreen" ng-show="fullscreen" ng-style="{'background-image' : photoBackground}">
+    <a class="galleryFullscreenButton close" href="javascript:void(0);" ng-click="closePhoto();"><i class="fa fa-times-circle"></i></a>
+    <a class="galleryFullscreenButton previous" href="javascript:void(0);" ng-click="fullPrevious();"><i class="fa fa-chevron-left"></i></a>
+    <a class="galleryFullscreenButton next" href="javascript:void(0);" ng-click="fullNext();"><i class="fa fa-chevron-right"></i></a>
+</div>

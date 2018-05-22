@@ -1,0 +1,32 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="galleryDialog">
+        <div class="field">
+            <label for="galleryId">ID</label>
+            <input id="galleryId" ng-model="gallery.id" placeholder="ID">
+        </div>
+
+        <div class="field">
+            <label for="galleryPassword">Clave</label>
+            <input type="password" id="galleryPassword" ng-model="gallery.password" placeholder="Clave">
+        </div>
+
+        <div class="result error" ng-show="gallery.result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> La galería no existe ó la contraseña es incorrecta.
+        </div>
+
+        <div class="result error" ng-show="gallery.result=='serverError'">
+            <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+        </div>
+
+        <a href="javascript:void(0);" ng-click="signIn();"><i class="fa fa-arrow-circle-o-right"></i> ENTRAR</a>
+    </div>
+</div>

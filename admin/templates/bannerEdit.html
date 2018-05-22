@@ -1,0 +1,52 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="slideError" ng-show="result=='serverError'">
+        <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+    </div>
+
+    <div class="slideEdit">
+        <h2>Lamina #{{slide.id}}</h2>
+
+        <label for="slideStatus">Status</label>
+        <select id="slideStatus"
+                ng-model="slide.status"
+                ng-options="status.text for status in statusAvailable track by status.text"></select>
+        <br><br>
+
+        <form id="imageForm">
+            <div class="picture" ng-style="{'background-image':'url(../img/home/' + imagePreview + ')'}"></div>
+            <input type="file" id="image" name="image">
+            <p>
+                Recomendaciones:
+                <ul>
+                    <li>Solo se admiten archivos en formato .JPG/JPEG.</li>
+                    <li>Recuerde subir una imagen de poco peso para que la transferencia del archivo se realize rápidamente. Lo ideal sería que la imagen pesara unos 250KB o menos.</li>
+                    <li>Para reducir el peso de la imagen, modifiquela para que mida 1600x730 pixeles.</li>
+                    <li>La resolución debe ser de 72 ó 96 dpi.</li>
+                </ul>
+            </p>
+        </form>
+        <br>
+
+        <h3>Título</h3>
+        <input type="text" ng-model="slide.title">
+        <br><br>
+
+        <h3>Subtítulo</h3>
+        <input type="text" ng-model="slide.subtitle">
+        <br><br>
+
+        <a class="action" href="javascript:void(0);" ng-click="update();"><i class="fa fa-pencil"></i> Grabar</a>
+        <a class="action" href="#!banner/list"><i class="fa fa-times-circle"></i> Cancelar</a>
+
+        <div class="break"></div>
+    </div>
+</div>

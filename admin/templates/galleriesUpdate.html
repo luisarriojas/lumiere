@@ -1,0 +1,42 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="galleryCreate">
+        <div class="result error" ng-show="gallery.result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> Debe llenar todos los campos para poder grabar las modificaciones.
+        </div>
+
+        <div class="result serverError" ng-show="gallery.result=='serverError'">
+            <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+        </div>
+
+        <h3>ID</h3>
+        {{gallery.id}}
+
+        <h3>Clave</h3>
+        <input type="text" ng-model="gallery.password">
+
+        <h3>Título</h3>
+        <input type="text" ng-model="gallery.title">
+
+        <h3>Carpeta</h3>
+        <input type="text" ng-model="gallery.folder">
+
+        <h3>Status</h3>
+        <select ng-model="gallery.status"
+                ng-options="status.text for status in statusAvailable track by status.code"></select>
+        <br><br>
+
+        <a class="action" href="#!impresiones/read/{{gallery.id}}"><i class="fa fa-times"></i> Cancelar</a>
+        <a class="action" href="javascript:void(0);" ng-click="update();"><i class="fa fa-floppy-o"></i> Grabar</a>
+
+        <div class="break"></div>
+    </div>
+</div>

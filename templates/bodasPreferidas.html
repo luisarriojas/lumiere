@@ -1,0 +1,38 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="portfolioBackground"></div>
+
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="portfolioTitle" ng-bind-template="Las Preferidas de Lumiere"></div>
+
+    <div class="portfolioControls">
+        <a class="portfolioButton" href="javascript:void(0);" ng-click="first();"><i class="fa fa-fast-backward"></i></a>
+        <a class="portfolioButton" href="javascript:void(0);" ng-click="previous();"><i class="fa fa-step-backward"></i></a>
+
+        <h2 class="portfolioPage">Página {{pagination.page + 1}} de {{pagination.qPage}}</h2>
+
+        <a class="portfolioButton" href="javascript:void(0);" ng-click="next();"><i class="fa fa-step-forward"></i></a>
+        <a class="portfolioButton" href="javascript:void(0);" ng-click="last();"><i class="fa fa-fast-forward"></i></a>
+
+        <div class="break"></div>
+    </div>
+
+    <a href="javascript:void(0);" ng-repeat="photo in photos | startFrom:pagination.page * pagination.pageSize | limitTo:pagination.pageSize" ng-click="showPhoto($index);">
+        <div class="portfolioPhoto" style="background-image:url(galleries/preferidas/{{photo.file}})"></div>
+    </a>
+
+    <div class="break"></div>
+</div>
+
+<div class="portfolioFullscreen" ng-show="fullscreen" ng-style="{'background-image' : photoBackground}">
+    <a class="portfolioFullscreenButton close" href="javascript:void(0);" ng-click="closePhoto();"><i class="fa fa-times-circle"></i></a>
+    <a class="portfolioFullscreenButton previous" href="javascript:void(0);" ng-click="fullPrevious();"><i class="fa fa-chevron-left"></i></a>
+    <a class="portfolioFullscreenButton next" href="javascript:void(0);" ng-click="fullNext();"><i class="fa fa-chevron-right"></i></a>
+</div>

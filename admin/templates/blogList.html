@@ -1,0 +1,47 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <a href="#!blog/create" class="createArticle"><i class="fa fa-plus" aria-hidden="true"></i> Crear artículo</a>
+    <div class="article" ng-repeat="article in articles">
+        <a href="#!blog/read/{{article.id}}">
+            <div class="picture" ng-style="{'background-image' : 'url(../img/blog/{{article.id}}.jpg)'}"></div>
+            <div class="title"> {{article.title}}</div>
+            <div class="break"></div>
+        </a>
+        <div class="articleControls">
+            <a href="javascript:void(0);" class="articleStarOn" ng-click="star(article.id);" ng-show="article.star==1">
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="articleStarOff" ng-click="star(article.id);" ng-hide="article.star==0">
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </a>
+            <a href="#!blog/update/{{article.id}}">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" ng-click="deleteDialog(article.id, $index);">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="deleteBackground" ng-show="delete.dialog==true">
+    <div class="container">
+        <div class="deleteDialog">
+            ¿Desea borrar esta sección?
+            <br><br>
+            <a href="javascript:void(0);" class="createArticle" ng-click="deleteAction(true);">
+                <i class="fa fa-trash" aria-hidden="true"></i> SI
+            </a>
+            <a href="javascript:void(0);" class="createArticle" ng-click="deleteAction(false);">
+                <i class="fa fa-pencil" aria-hidden="true"></i> NO
+            </a>
+        </div>
+    </div>
+</div>

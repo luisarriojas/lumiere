@@ -1,0 +1,26 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <div class="article">
+        <div class="field">
+            <label for="order">Posición:</label>
+            <input type="text" id="order" ng-model="card.order" />
+        </div>
+        <div class="field">
+            <label for="title">Título:</label>
+            <input type="text" id="title" ng-model="card.title" />
+        </div>
+        <div class="field">
+            <label for="content">Contenido:</label>
+            <textarea id="content" ng-model="card.content"></textarea>
+        </div>
+        <a href="#!quienesSomos/list" class="createArticle"><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancelar</a>
+        <a href="javascript:void(0);" ng-click="save();" class="createArticle"><i class="fa fa-floppy-o" aria-hidden="true"></i> Grabar</a>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <div class="article">
+        <form id="createForm">
+            <div class="field">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" />
+            </div>
+            <div class="field">
+                <label for="picture">Imagen:</label>
+                <input type="file" id="picture" name="picture">
+            </div>
+            <div class="field">
+                <label for="body">Cuerpo:</label>
+                <textarea id="body" name="body"></textarea>
+            </div>
+        </form>
+        <a href="#!blog/list" class="createArticle"><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancelar</a>
+        <a href="javascript:void(0);" ng-click="save();" class="createArticle"><i class="fa fa-floppy-o" aria-hidden="true"></i> Grabar</a>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="slideError" ng-show="banner.result=='serverError'">
+        <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+    </div>
+
+    <div>
+        <div class="slide" ng-repeat = "slide in banner.slides">
+            <h2>Lamina #{{slide.id}} - {{slide.status}}</h2>
+            <div class="picture" style="background-image:url(../img/home/{{slide.image}})"></div>
+            <h3>{{slide.title}}</h3>
+            <h4>{{slide.subtitle}}</h4>
+            <a class="action" href="#!banner/edit/{{slide.id}}/{{slide.title}}/{{slide.subtitle}}/{{slide.status}}"><i class="fa fa-pencil"></i> Editar</a>
+        </div>
+    </div>
+
+    <div class="break"></div>
+</div>

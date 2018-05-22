@@ -1,0 +1,32 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="signInDialog">
+        <div class="field">
+            <label for="signInUser">Usuario</label>
+            <input id="signInUser" ng-model="signIn.user" placeholder="ID">
+        </div>
+
+        <div class="field">
+            <label for="signInPassword">Clave</label>
+            <input type="password" id="signInPassword" ng-model="signIn.password" placeholder="Clave">
+        </div>
+
+        <div class="result error" ng-show="signIn.result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> El usuario no existe ó la contraseña es incorrecta.
+        </div>
+
+        <div class="result error" ng-show="signIn.result=='serverError'">
+            <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+        </div>
+
+        <a href="javascript:void(0);" ng-click="signIn();"><i class="fa fa-arrow-circle-o-right"></i> ENTRAR</a>
+    </div>
+</div>

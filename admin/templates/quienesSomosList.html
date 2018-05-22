@@ -1,0 +1,42 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+
+<div class="container">
+    <div class="spacer"></div>
+
+    <a href="#!quienesSomos/create" class="createArticle"><i class="fa fa-plus" aria-hidden="true"></i> Crear sección</a>
+
+    <div class="card" ng-repeat="card in cards">
+        <h2>#{{card.order}} - {{card.title}}</h2>
+        <div class="cardControls">
+            <a href="#!quienesSomos/update/{{card.id}}">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" ng-click="deleteDialog(card.id, $index);">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+        </div>
+        
+        <div ng-bind-html="card.content"></div>
+    </div>
+</div>
+
+<div class="deleteBackground" ng-show="delete.dialog==true">
+    <div class="container">
+        <div class="deleteDialog">
+            ¿Desea borrar esta sección?
+            <br><br>
+            <a href="javascript:void(0);" class="createArticle" ng-click="deleteAction(true);">
+                <i class="fa fa-trash" aria-hidden="true"></i> SI
+            </a>
+            <a href="javascript:void(0);" class="createArticle" ng-click="deleteAction(false);">
+                <i class="fa fa-pencil" aria-hidden="true"></i> NO
+            </a>
+        </div>
+    </div>
+</div>

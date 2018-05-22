@@ -1,0 +1,676 @@
+/*
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+*/
+
+
+/* open-sans-regular - latin */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url('../fonts/openSans/open-sans-v13-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/openSans/open-sans-v13-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* open-sans-700 - latin */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('../fonts/openSans/open-sans-v13-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/openSans/open-sans-v13-latin-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* great-vibes-regular - latin */
+
+@font-face {
+    font-family: 'Great Vibes';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Great Vibes'), local('GreatVibes-Regular'), url('../fonts/greatVibes/great-vibes-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/greatVibes/great-vibes-v4-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html,
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.break {
+    clear: both;
+}
+
+.container {
+    position: relative;
+    width: 1100px;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+.spacer {
+    height: 87px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 120;
+    padding: 3px 0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+
+.logo {
+    position: fixed;
+    top: 3px;
+    left: 50%;
+    width: 143px;
+    height: 94px;
+    z-index: 121;
+    background-image: url(../img/index/logo.png);
+    background-repeat: no-repeat;
+    margin: 0 0 0 -73px;
+}
+
+.halfCircle {
+    position: fixed;
+    top: 56px;
+    left: 50%;
+    width: 187px;
+    height: 81px;
+    z-index: 120;
+    background-image: url(../img/index/halfCircle.png);
+    background-repeat: no-repeat;
+    margin: 0 0 0 -93px;
+}
+
+.menuHor {
+    float: right;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 13px 0 0 0;
+}
+
+.menuHor ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menuHor li {
+    float: right;
+    margin-left: 30px;
+}
+
+.menuHor li:last-child {
+    margin: 0;
+}
+
+.menuHor li a {
+    color: #2a2a2a;
+    text-decoration: none;
+}
+
+.view {
+    padding: 56px 0 49px 0;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.90);
+    z-index: 110;
+    text-align: center;
+    padding: 150px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu li a {
+    color: #2a2a2a;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.signInDialog {
+    background-color: white;
+    width: 300px;
+    height: auto;
+    margin: 0 auto 0 auto;
+    padding: 15px 30px;
+}
+
+.signInDialog .field {
+    width: 300px;
+    height: auto;
+    margin: 0;
+}
+
+.signInDialog label {
+    font-weight: 700;
+}
+
+.signInDialog input {
+    width: 276px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.signInDialog a {
+    display: inline-block;
+    position: relative;
+    padding: 5px 20px;
+    left: 50%;
+    margin: 10px 0 0 -50px;
+    border: 1px solid #2a2a2a;
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+.signInDialog a:hover {
+    background: #2a2a2a;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #2a2a2a 0%, #4f5052 99%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2a2a2a), color-stop(99%, #4f5052));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #2a2a2a 0%, #4f5052 99%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #2a2a2a 0%, #4f5052 99%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #2a2a2a 0%, #4f5052 99%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #2a2a2a 0%, #4f5052 99%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#2a2a2a', endColorstr='#4f5052', GradientType=0);
+    /* IE6-9 */
+    color: white;
+}
+
+.signInDialog .result {
+    width: 260px;
+    height: auto;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+}
+
+.signInDialog .result.error {
+    background-color: red;
+}
+
+.slide {
+    width: 306px;
+    height: auto;
+    float: left;
+    margin: 0 30px 30px 0;
+    padding: 20px;
+    background-color: white;
+}
+
+.slide:nth-child(3n) {
+    margin: 0 0 30px 0;
+}
+
+.slide h2 {
+    margin: 0;
+}
+
+.slide .picture {
+    width: 306px;
+    height: 139px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.slide h3 {
+    margin: 0;
+}
+
+.slide h4 {
+    margin: 0;
+}
+
+.slide .action {
+    display: inline-block;
+    width: 306px;
+    height: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 0;
+    text-decoration: none;
+}
+
+.slideError {
+    width: 1060px;
+    height: auto;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    background-color: red;
+}
+
+.slideEdit {
+    width: 306px;
+    height: auto;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -173px;
+    padding: 20px;
+    background-color: white;
+}
+
+.slideEdit h2 {
+    margin: 0;
+}
+
+.slideEdit .picture {
+    width: 306px;
+    height: 139px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.slideEdit p {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 20px 0 0 0 padding: 0;
+}
+
+.slideEdit ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+}
+
+.slideEdit h3 {
+    margin: 0;
+}
+
+.slideEdit .action {
+    display: inline-block;
+    float: right;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+.galleryCreateAction {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+.card {
+    height: auto;
+    background-color: white;
+    padding: 20px 0;
+    margin: 0;
+    text-align: justify;
+}
+
+.card h2 {
+    margin: 0;
+}
+
+.card .cardControls a {
+    text-decoration: none;
+    color: #2a2a2a;
+    margin-right: 10px;
+}
+
+.deleteBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 122;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.deleteDialog {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 250px;
+    height: auto;
+    padding: 15px 30px;
+    margin: 0 0 0 -125px;
+    background-color: white;
+}
+
+.table {
+    height: auto;
+    text-align: center;
+}
+
+.tableHeader {
+    background-color: #2a2a2a;
+    height: auto;
+    padding: 10px 0;
+    color: white;
+    font-weight: 700;
+}
+
+.tableHeader .id {
+    float: left;
+    width: 100px;
+}
+
+.tableHeader .title {
+    float: left;
+    width: 700px;
+}
+
+.tableHeader .folder {
+    float: left;
+    width: 200px;
+}
+
+.tableHeader .status {
+    float: left;
+    width: 100px;
+}
+
+.tableData {
+    background-color: white;
+    height: auto;
+    padding: 10px 0;
+    color: #2a2a2a;
+    font-weight: 700;
+}
+
+.table a:nth-child(2n) .tableData {
+    background-color: #f4f4f9;
+}
+
+.tableData .id {
+    float: left;
+    width: 100px;
+}
+
+.tableData .title {
+    float: left;
+    width: 700px;
+}
+
+.tableData .folder {
+    float: left;
+    width: 200px;
+}
+
+.tableData .status {
+    float: left;
+    width: 100px;
+}
+
+.galleryCreate h3 {
+    margin: 0;
+}
+
+.galleryCreate .action {
+    float: left;
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.galleryCreate .result {
+    height: auto;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.galleryCreate .result.error {
+    background-color: #e9a51f;
+}
+
+.galleryCreate .result.serverError {
+    background-color: red;
+}
+
+.galleryCreate .result.errorPhotos {
+    background-color: #e9a51f;
+}
+
+.portfolioControls {
+    width: 350px;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+.portfolioButton {
+    display: inline-block;
+    float: left;
+    width: 35px;
+    height: auto;
+    color: #2a2a2a;
+    margin: 0 10px 32px 0;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.portfolioPage {
+    float: left;
+    margin: 0 10px 32px 0;
+    font-size: 24px;
+}
+
+.portfolioPhoto {
+    float: left;
+    width: 188px;
+    height: 188px;
+    margin: 0 16px 32px 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolioPhoto span {
+    background-color: white;
+    color: #2a2a2a;
+}
+
+.portfolioFullscreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    background-color: #2a2a2a;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.portfolioFullscreenButton {
+    position: fixed;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.portfolioFullscreenButton.close {
+    top: 20px;
+    right: 20px;
+}
+
+.portfolioFullscreenButton.previous {
+    top: 50%;
+    left: 20px;
+}
+
+.portfolioFullscreenButton.next {
+    top: 50%;
+    right: 20px;
+}
+
+.article {
+    height: auto;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    color: #2a2a2a;
+}
+
+.article a {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+a.createArticle {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 0 30px 10px 0;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+a.articleStar {
+    font-size: 24px;
+}
+
+.article .picture {
+    float: left;
+    width: 300px;
+    height: 136px;
+    margin: 0 30px 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.article .title {
+    float: left;
+    width: 770px;
+    height: auto;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.article .publishedOn {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.article .body {
+    text-align: justify;
+}
+
+.article .articleControls a {
+    margin-right: 30px;
+}
+
+.articleControls .articleStarOn {
+    color: #d5de33;
+}
+
+.articleControls .articleStarOff {
+    color: #2a2a2a;
+}
+
+.article .field {
+    height: auto;
+    margin: 0 0 30px 0;
+}
+
+.article label {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.article label:after {
+    content: "\a";
+    white-space: pre;
+}
+
+.article input[type="text"] {
+    float: none;
+    width: 900px;
+    padding: 5px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.article input[type="file"] {
+    float: none;
+    padding: 5px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.article textarea {
+    float: none;
+    width: 900px;
+    height: 450px;
+    padding: 5px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}

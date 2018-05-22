@@ -1,0 +1,72 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <div class="contactPhone">
+        <h1>Contacto</h1>
+        <h2>Puede ponerse en contacto a través de los siguientes teléfonos o email:</h2>
+        <ul>
+            <li><i class="fa fa-phone-square"></i> <a href="tel:+584144421717">0414-442.17.17</a></li>
+            <li><i class="fa fa-phone-square"></i> <a href="tel:+584124401718">0412-440.17.18</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="mailto:lumierefotosdeboda@gmail.com">lumierefotosdeboda@gmail.com</a>
+            </li>
+        </ul>
+    </div>
+    <div class="contactQuote">
+        <h2>Cotizaciones</h2>
+        <div class="field">
+            <label for="quoteName">Nombre y apellido (*)</label>
+            <br>
+            <input id="quoteName" ng-model="quote.name" placeholder="Nombre y apellido">
+        </div>
+        <div class="field right">
+            <label for="quoteEmail">Email (*)</label>
+            <br>
+            <input id="quoteEmail" ng-model="quote.email" placeholder="Email">
+        </div>
+        <div class="break"></div>
+        <div class="field">
+            <label for="quotePhone">Teléfono (*)</label>
+            <br>
+            <input id="quotePhone" ng-model="quote.phone" placeholder="Teléfono">
+        </div>
+        <div class="field right">
+            <label for="quotePlace">Lugar del evento</label>
+            <br>
+            <input id="quotePlace" ng-model="quote.place" placeholder="Lugar del evento">
+        </div>
+        <div class="break"></div>
+        <div class="field">
+            <label for="quoteDate">Fecha del evento</label>
+            <br>
+            <input id="quoteDate" ng-model="quote.date" placeholder="Fecha del evento">
+        </div>
+        <div class="field right">
+            <label for="quoteSubject">Asunto (*)</label>
+            <br>
+            <input id="quoteSubject" ng-model="quote.subject" placeholder="Asunto">
+        </div>
+        <div class="break"></div>
+        <label for="quoteMessage">Mensaje (*)</label>
+        <br>
+        <textarea id="quoteMessage" ng-model="quote.message" placeholder="Mensaje"></textarea>
+        <div class="break"></div>
+        <div class="result success" ng-show="quote.result=='success'">
+            <i class="fa fa-check-square-o"></i> Sus datos han sido enviados. Su cotización será respondida lo antes posible. Gracias.
+        </div>
+        <div class="result error" ng-show="quote.result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> Hubo un problema al enviar sus datos. Vuelva a intentar.
+        </div>
+        <div class="result data" ng-show="quote.result=='data'">
+            <i class="fa fa-keyboard-o"></i> Los campos marcados con un asterisco (*) debe llenarlos.
+        </div>
+        <br>
+        <a href="javascript:void(0);" ng-click="sendQuote();"><i class="fa fa-arrow-circle-o-right"></i> ENVIAR</a>
+    </div>
+    <div class="break"></div>
+</div>

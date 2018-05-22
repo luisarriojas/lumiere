@@ -1,0 +1,50 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="galleryCreate">
+        <div class="result error" ng-show="result=='error'">
+            <i class="fa fa-exclamation-triangle"></i> Debe llenar todos los campos para poder crear la galería.
+        </div>
+
+        <div class="result serverError" ng-show="result=='serverError'">
+            <i class="fa fa-exclamation-triangle"></i> No se logra hacer contacto con el servidor. Revise su conexión a Internet ó vuelva a intentar en unos minutos.
+        </div>
+
+        <div class="result errorPhotos" ng-show="result=='errorPhotos'">
+            <i class="fa fa-camera"></i> No ha creado la carpeta de las fotos en el servidor o no ha subido fotos aún.
+        </div>
+
+        <h3>ID</h3>
+        {{gallery.id}}
+
+        <h3>Clave</h3>
+        <input type="text" ng-model="gallery.password">
+
+        <h3>Título</h3>
+        <input type="text" ng-model="gallery.title">
+
+        <h3>Carpeta</h3>
+        <input type="text" ng-model="gallery.folder">
+
+        <h3>Status</h3>
+        <select ng-model="gallery.status">
+            <option value="1">ON</option>
+            <option value="0">OFF</option>
+        </select>
+        <br><br>
+
+        <strong>NOTA: </strong> Recuerde que antes de grabar debe crear la carpeta de fotos en el servidor y subir todas sus fotos. La sincronización del listado de fotos se realiza durante el proceso de creación. Si agrega más fotos a la carpeta luego de la creación, no se mostrarán las fotos correctamente.
+
+        <a class="action" href="#!impresiones/list"><i class="fa fa-times"></i> Cancelar</a>
+        <a class="action" href="javascript:void(0);" ng-click="save();"><i class="fa fa-floppy-o"></i> Grabar</a>
+
+        <div class="break"></div>
+    </div>
+</div>

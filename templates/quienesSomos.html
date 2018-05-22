@@ -1,0 +1,16 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="card" ng-repeat="card in cards">
+        <h2>{{card.title}}</h2>
+        <div ng-bind-html="card.content"></div>
+    </div>
+</div>

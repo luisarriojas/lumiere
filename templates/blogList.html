@@ -1,0 +1,17 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <div class="article" ng-repeat="article in articles">
+        <a href="#!blog/read/{{article.id}}">
+            <div class="picture" ng-style="{'background-image' : 'url(img/blog/{{article.id}}.jpg)'}"></div>
+            <div class="title">{{article.title}}</div>
+            <div class="break"></div>
+        </a>
+    </div>
+</div>

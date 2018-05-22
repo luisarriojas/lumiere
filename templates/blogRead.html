@@ -1,0 +1,23 @@
+<!--
+LumiereFotosDeBoda.com
+Copyright (c) 2015 LumiereFotosDeBoda.com
+
+Developed by Luis E. Arriojas for LumiereFotosDeBoda.com
+LinkedIn: https://www.linkedin.com/in/luisarriojas
+-->
+<div class="container">
+    <div class="spacer"></div>
+    <div class="article">
+        <a href="#!blog/list"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a>
+        <br>
+        <br>
+        <div class="break"></div>
+        <div class="picture" style="background-image : url(img/blog/{{article.id}}.jpg);"></div>
+        <div class="title">{{article.title}}</div>
+        <div class="break"></div>
+        <div class="publishedOn">
+            Fecha de publicación: {{article.publishedOn}}
+        </div>
+        <div class="body" ng-bind-html="article.body"></div>
+    </div>
+</div>
